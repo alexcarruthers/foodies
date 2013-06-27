@@ -1,0 +1,11 @@
+!/usr/bin/env bash
+
+heroku create foodies --stack cedar
+heroku addons:add heroku-postgresql:dev
+heroku addons:add memcache:5mb
+heroku pg:wait
+git push heroku master
+heroku config:add PLATFORM=heroku
+heroku labs:enable user-env-compile -a foodies
+heroku run ./postinstall
+heroku restart

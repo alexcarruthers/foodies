@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block content %}
+    <div class="row">
+        <div class="span12">
+            <div class="page-header">
+                <h1>Registration</h1>
+            </div>
+            {% if form.errors %}
+                <p>Please fill in the required fields and try again.</p>
+            {% endif %}
+            <form action="{% url 'register' %}" method="post" class="form-horizontal">
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div class="alert alert-error">
+                        <p>{{ form.non_field_errors }}</p>
+                    </div>
+                {% endif %}
+                <fieldset>
+                    {% for field in form %}
+                        <div class="control-group {% if field.errors %}error{% endif %}">
+                            <label class="control-label" for="{{ field.auto_id }}">{{ field.label }}:</label>
+                            <div class="controls">
+                                {{ field }}
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                        <span class="help-inline">{{ error|escape }}</span>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="form-actions">
+                        <input type="submit" class="btn btn-primary" value="register" />
+                    </div>
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}

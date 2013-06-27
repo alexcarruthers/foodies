@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if error %}
+        <p style="color: red;">Please fill in all fields.</p>
+    {% endif %}
+    <div class="row">
+        <div class="span10 offset1">
+            <div class="page-header">
+                {% if recipe %}
+                    <h1>Update Recipe {{ recipe.name }}
+                        <a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">Delete</a>
+
+                        <div id="myModal" class="modal hide fade">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h3>Delete Recipe</h3>
+                            </div>
+                            <div class="modal-body">
+                                <h5>Are you sure you want to delete this recipe?</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-primary" data-dismiss="modal">Cancel</a>
+                                <a href="{% url delete_recipe recipe.id %}" class="btn btn-primary">Delete Recipe</a>
+                            </div>
+                        </div>
+                    </h1>
+                {% else %}
+                    <h1>Create Recipe</h1>
+                {% endif %}
+            </div>
+
+            <form class="form-horizontal" action="" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="control-group {% if field.errors %}error{% endif %}">
+                        <label class="control-label" for="{{ field.auto_id }}"><strong>{{ field.label }}</strong></label>
+                        <div class="controls">
+                            {{ field }}
+                            {% if field.errors %}
+                                <ul class="inline text-error">
+                                    {% for error in field.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+                <h3>Ingredients</h3>
+                {% for f in formset %}
+                    {{ formset.management_form }}
+                    {% for field in f.visible_fields %}
+                        {% if not field.hidden %}
+                        <div class="control-group {% if field.errors %}error{% endif %}">
+                            <label class="control-label" for="{{ field.auto_id }}"><strong>{{ field.label }}</strong></label>
+                            <div class="controls">
+                                {{ field }}
+                                {% if field.errors %}
+                                    <ul class="inline text-error">
+                                        {% for error in field.errors %}
+                                            <li>{{ error }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    {% for hidden in f.hidden_fields %}
+                        {{ hidden }}
+                    {% endfor %}
+                {% endfor %}
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">{% if recipe %}Update{% else %}Create{% endif %}</button>
+                    <button type="button" class="btn" onclick="history.go(-1);return true;">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

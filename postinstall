@@ -1,0 +1,62 @@
+#! /bin/sh
+
+#mkdir -p /home/dotcloud/data/media /home/dotcloud/volatile/static
+
+if [ "$PLATFORM" != "" -a "$PLATFORM" = "heroku" ]
+then
+    echo "The platform was identified as heroku."
+    if [ -f deps/heroku-req.pybundle ]
+    then
+        pip install heroku-req.pybundle
+    else
+        pip install -r deps/heroku-req.txt
+    fi
+elif [ "$PLATFORM" != "" -a "$PLATFORM" = "dotcloud" -o -d "/home/dotcloud" -o "$DOTCLOUD_ENVIRONMENT" != "" ] 
+then
+    echo "The platform was identified as dotcloud."
+    if [ -f deps/dotcloud-req.pybundle ]
+    then
+        pip install dotcloud-req.pybundle
+    else
+        pip install -r deps/dotcloud-req.txt
+    fi
+elif [ "$PLATFORM" != "" -a "$PLATFORM" = "production" ]
+then 
+    echo "The platform was identified as production."
+    if [ -f deps/production-req.pybundle ]
+    then
+        pip install production-req.pybundle
+    else
+        pip install -r deps/production-req.txt
+    fi
+else
+    echo "No platform could be detected, assuming local development."
+    if [ -f deps/local-req.pybundle ]
+    then
+        pip install local-req.pybundle
+    else
+        pip install -r deps/local-req.txt
+    fi
+fi
+
+python manage.py clean_pyc
+python manage.py compile_pyc
+
+python manage.py collectstatic --noinput
+
+#python deploy/createdb.py
+python manage.py syncdb --noinput
+
+# Migrate account first as that will add the UserProfile model and prevent future errors.
+python manage.py migrate foodies.account
+
+python manage.py migrate guardian
+python manage.py migrate gargoyle
+python manage.py migrate djangoratings
+
+python manage.py migrate foodies.recipe
+python manage.py migrate foodies.blog
+
+python manage.py validate
+python manage.py update_permissions
+

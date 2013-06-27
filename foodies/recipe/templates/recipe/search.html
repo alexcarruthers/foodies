@@ -1,0 +1,11 @@
+{% extends "recipe/listrecipes.html" %}
+{% block title_heading %}
+<form action="../search/" method="get">
+    <h1>
+    <div class="form-horizontal">
+        <input type="search" class="span3" {% if input_value %}value={{input_value}} {% else %} placeholder="Submit" {% endif %}  name="searchInput"/>
+        <input type="submit" class="btn btn-primary" value="Search"/>
+    </div>
+    </h1>
+</form>
+{% endblock %}

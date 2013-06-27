@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% load comments %}
+{% load ratings %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <div class="row">
+        <div class="span10 offset1">
+            <div class="page-header">
+                <table width="100%"><tr>
+                <td><h1>{{ recipe.name }}
+                <small>by <a href="{% url user_recipes recipe.user.id %}">{{ recipe.user.get_full_name }}</a></small>
+		        </h1></td>
+                {% if user.id = recipe.user.id %}
+                    <td align="right"><a class="btn btn-primary" href="{% url update_recipe recipe.id %}"> Edit</a></td>
+                {% endif %}
+                </tr></table>
+            </div>
+            <span class='st_sharethis' displayText='ShareThis'></span>
+            <span class='st_facebook' displayText='Facebook'></span>
+            <span class='st_twitter' displayText='Tweet'></span>
+            <span class='st_email' displayText='Email'></span>
+            <br/>
+            <p><img align="right" src="http://placehold.it/300x200"/></p>
+
+            {% rating_by_request request on recipe.rating as vote %}
+            {% if user.is_authenticated %}
+            {% rating_by_user user on recipe.rating as user_vote %}
+            Average Rating: <div id="star" data-score="{{ vote }}" data-user-vote="{{ user_vote|yesno:"true,false" }}"></div>
+            {% if user_vote %}
+                You have rated this recipe with {{ user_vote }} stars.
+            {% endif %}
+            {% endif %}
+
+            <h4>Ingredients</h4>
+            <ul>
+                {% for ingredient in recipe.ingredients.all %}
+                    <li>{{ ingredient.quantity }} {{ ingredient.unit }} {{ ingredient.name }}</li>
+                {% endfor %}
+            </ul>
+            <h4>Preparation Time</h4>
+            {{ recipe.time_to_prepare }} minutes.
+            <h4>Cooking Time</h4>
+            {{ recipe.cooking_time }} minutes.
+            <h4>Instructions</h4>
+            {{ recipe.prep_steps|linebreaks }}
+            {% get_comment_count for recipe as comment_count  %}
+            <h4>Comments ({{ comment_count }})</h4>
+            {% if comment_count == 0 %}
+            <p>No Comments Yet</p>
+            {% endif %}
+            {% render_comment_list for recipe %}
+            {% if user.is_authenticated %}
+            {% get_comment_form for recipe as form %}
+            <form class="form-horizontal" action="{% comment_form_target %}" method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if not field.is_hidden %}
+                        <div class="control-group {% if field.errors %}error{% endif %}">
+                            <label class="control-label" for="input{{ field.label }}"><strong>{{ field.label }}</strong></label>
+                            <div class="controls">
+                                <table>
+                                    <tr>
+                                        <td>{{ field }}</td>
+                                        <td>
+                                            {% if field.errors %}
+                                                <ul class="inline text-error">
+                                                    {% for error in field.errors %}
+                                                        <li>{{ error }}</li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+                {% endfor %}
+                <div class="form-actions">
+                    <input class="btn btn-primary" type="submit" name="submit" value="Post">
+                    <input class="btn" type="submit" name="preview" value="Preview">
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "2c13c951-1f0c-48d1-bc60-5b54abcdd4cd", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+{% endblock %}
+{% block js_includes %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static "components/raty/jquery.raty.min.js" %}"></script>
+    <script type="text/javascript">
+        $.fn.raty.defaults.path = '{% static "components/raty/img" %}';
+    </script>
+    <script type="text/javascript" src="{% static "recipe/js/view_recipe.js" %}"></script>
+{% endblock %}

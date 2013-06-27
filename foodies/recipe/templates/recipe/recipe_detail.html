@@ -1,0 +1,9 @@
+{% load comments %}
+
+{%get_comment_count for comments_number as comment_count %}
+<p>{{ comment_out }} comments have been poster.</p>
+
+
+{%render_comment_list for recipe %}
+
+

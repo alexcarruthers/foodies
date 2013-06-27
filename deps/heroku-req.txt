@@ -1,0 +1,10 @@
+# Heroku Requirements
+dj-database-url==0.2.1
+gunicorn==0.17.2
+psycopg2==2.4.5
+#pylibmc==1.2.3
+#django-pylibmc-sasl==0.2.4
+
+-e git://github.com/sayar/django-announcements.git#egg=announcements
+-e git://github.com/sayar/django-activity-stream.git#egg=django-analytical
+

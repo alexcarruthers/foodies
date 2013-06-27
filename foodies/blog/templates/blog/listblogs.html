@@ -1,0 +1,53 @@
+{% extends "base.html" %} 
+{% block content %} 
+<div class="row">
+    <div class="span1"></div>
+    <div class="span10">
+        {% block title_heading %}
+        {% if username %}
+        <h1>{{ username }}'s Blog Posts</h1>
+        {% else %}
+        <h1>All Blog Posts</h1>
+        {% endif %}
+        {% endblock %}
+        {% if blog_list %}
+        <div class="accordion" id="accordion2">
+            {% for blog in blog_list %}
+            <div class="accordion-group">
+                <table width="100%">
+                    <tr>
+                        <td>
+                             <h3>
+                             <a class="accordion-toggle" data-toggle="collapse" data-parent="accordion2" href="#collapse{{ forloop.counter }}">
+                             {{ blog.title }}
+                             </a>
+                             <small>By: {{ blog.user.get_full_name }}</small>
+                             </h3>
+                        </td>
+                        <td align="right">
+                            <a href="{% url blog.views.view_post pk=blog.pk %}">Goto Blog</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="collapse{{ forloop.counter }}" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <p><img class="pull-right" src="http://placehold.it/300x200"/>
+                        {{ blog.body|linebreaksbr }}
+                    </p>
+                    <p>
+                    {% if blog.recipe_link %}
+                    <a href="{{ blog.recipe_link.get_absolute_url }}">{{ blog.recipe_link.name }}</a>
+                    {% endif %}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        No blog posts found.
+        {% endif %}
+    </div>
+    <div class="span1"></div> 
+</div> 
+{% endblock %}

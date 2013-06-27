@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="span1"></div>
+    <div class="span10">
+        {% if username %}
+        <h1>{{ username }}'s Recipes</h1>
+        {% else %}
+        <h1>View Recipe</h1>
+        {% endif %}
+        
+        <div class="accordion" id="accordion2">
+            
+            <div class="accordion-group">
+                <table width="100%">
+                    <tr>
+                        <td>
+                             <a class="accordion-toggle" data-toggle="collapse" data-parent="accordion2" href="#collapse{{ forloop.counter }}">
+                             <form action="../delete/" method="post">
+                             <h3>{{ recipe.name }}</h3>
+                             </a>
+                        </td>
+                        <td align="right">
+                            <a href="../update">Edit</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="collapse{{ forloop.counter }}" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <dl>
+                                    <dt><h4>Ingredients</h4></dt>
+                                    <dd>
+                                        <ul>
+                                            {% for ingredient in recipe.ingredients.all %}
+                                            <li>{{ ingredient.quantity }} {{ ingredient.unit }} {{ ingredient.name }}</li>
+                                            {% endfor %}    
+                                        </ul>
+                                    </dd>
+                                    <dt><h4>Preparation Time</h4></dt>
+                                    <dd>
+                                        {{ recipe.time_to_prepare }} minutes.
+                                    </dd>
+                                    <dt><h4>Cooking Time</h4></dt>
+                                    <dd>
+                                        {{ recipe.cooking_time }} minutes.
+                                    </dd>
+                                    <dt><h4>Instructions</h4></dt>
+                                    <dd>
+                                        {{ recipe.prep_steps|linebreaks }}
+                                    </dd>
+                                   
+                                </dl>
+                            </td>
+                            <td align="right">
+                                <p>Recipe by: <a href="/recipes/{{ recipe.user.id }}"> {{ recipe.user.username }} </a>
+                                <p><img src="http://placehold.it/300x200"/>
+                                <p>{{ recipe.name }}</p>
+                                <input type="submit" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div class="span1"></div>
+</div>
+{% endblock %}

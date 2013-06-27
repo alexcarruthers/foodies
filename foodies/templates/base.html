@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block meta_title %}Foodies{% endblock %}</title>
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+    <meta name="description" content="{% block meta_description %}{% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% load static from staticfiles %}
+    {% load compress %}
+
+    <!--[if (!IE)|(gte IE 8)]><!-->
+    {% compress css %}
+        <link rel="stylesheet" type="text/css" href="{% static "components/bootstrap/dist/css/bootstrap.min.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "components/bootstrap/dist/css/bootstrap-responsive.min.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "site/css/style.css" %}"/>
+    {% endcompress %}
+    <!--<![endif]-->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    {% compress css %}
+        {% block css_includes %}{% endblock %}
+    {% endcompress %}
+</head>
+<body>
+{% compress js inline %}
+    <script type="text/javascript">
+        window.user = {
+            is_authenticated: {{ user.is_authenticated|lower }},
+            username:'{{ user.username|escapejs }}',
+            full_name:'{{ user.get_full_name|escapejs }}',
+            user_id:{% if user.id %}{{ user.id }}{% else %}null{% endif %}
+        };
+    </script>
+{% endcompress %}
+
+{% compress js %}
+    {% block top_js_includes %}{% endblock %}
+{% endcompress %}
+
+{% load base_extras %}
+
+<div class="wrapper">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/">Foodies</a>
+
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                {% if user.is_authenticated %}
+                    {# Not all the tabs are here... we'll add them as we make the sites #}
+                    <ul class="nav nav-collapse">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Recipes
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="{% navactive request '/recipes/me/' %}"><a href="{% url list_my_recipes %}">My Recipes</a></li>
+                                <li class="{% navactive request '/recipes/all/' %}"><a href="{% url list_recipes %}">Recipes</a></li>
+                                <li class="{% navactive request '/recipes/create/' %}"><a href="{% url create_recipe %}">New Recipe</a></li>
+                                <li class="{% navactive request '/recipes/search/' %}"><a href="{% url search_recipes %}">Search Recipes</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                Blog Posts
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="{% navactive request '/post/me/' %}"><a href="{% url list_my_posts %}">My Blog Posts</a></li>
+                                <li class="{% navactive request '/post/all/' %}"><a href="{% url list_posts %}">Blog Posts</a></li>
+                                <li class="{% navactive request '/post/add/' %}"><a href="{% url create_post %}">New Blog Post</a></li>
+                                <li class="{% navactive request '/post/search/' %}"><a href="{% url search_blogs %}">Search Blog Posts</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+					
+                    <ul class="nav pull-right">
+                        <li class="dropdown pull-right">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ user.get_full_name }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url updateUser %}">Edit Profile</a></li>
+                                <li><a href="{% url logout %}">Log out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                {% else %}
+                    <ul class="nav nav-collapse">
+                        <li class="{% navactive request '/recipes/all/' %}"><a href="{% url list_recipes %}">Recipes</a></li>
+                        <li class="{% navactive request '/post/all/' %}"><a href="{% url list_posts %}">Blog Posts</a></li>
+                        <li class="{% navactive request '/recipes/search/' %}"><a href="{% url search_recipes %}">Search Recipes</a></li>
+                        <li class="{% navactive request '/post/search/' %}"><a href="{% url search_blogs %}">Search Blog Posts</a></li>
+                    </ul>
+                    <ul class="nav pull-right hidden-phone">
+                        <li class="dropdown pull-right nav-bottom ">
+                            <a href="#" class="dropdown-toggle nav-btn-link btn" data-toggle="dropdown">Sign In</a>
+                            <ul id="dropdown-login" class="dropdown-menu">
+                                <form method="post" action="{% url login %}">
+                                    {% csrf_token %}
+                                    <fieldset>
+                                        <label for="id_email">Email</label>
+                                        <input id="id_email" type="text" class="required" name="email" maxlength="75"/>
+                                        <label for="id_password">Password</label>
+                                        <input id="id_password" type="password" class="required" name="password"/>
+                                    </fieldset>
+                                    <button type="submit" class="btn btn-block btn-primary">Sign in</button>
+                                    <a href="{% url register %}" class="btn btn-block btn-primary">Create User</a>
+																		<a href="{% url password_reset %}" class="btn btn-block btn-primary">Forgot Password</a>
+
+                                </form>
+                            </ul>
+                        </li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div id="announcements" class="container">
+        <noscript>
+            <div class="alert error">
+                Foodies will not function without JavaScript enabled. Please enable JavaScript if you wish to
+                use the site.
+            </div>
+        </noscript>
+        {% for announce in announcements %}
+            <div class="alert {{ anounce.message_level }}">
+                {% if announce.acknowledge %}
+                    <a class="close" href="{% url announcement_acknowledge announce.id %}?return_url={{request.path}}"
+                       data-dismiss="alert">&times;</a>
+                {% endif %}
+                {{ announce.body }}
+            </div>
+        {% endfor %}
+        {% block announcements %}{% endblock %}
+    </div>
+
+    <div id="header">
+        {% block header %}{% endblock %}
+    </div>
+
+    {% block content_outer %}
+        <div id="content" class="container">
+            {% block content %}{% endblock %}
+        </div>
+    {% endblock %}
+    <div class="push"></div>
+</div>
+
+<div id="footer">
+    {% block footer %}
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <a href="#">About</a>
+                    <a href="#">Features</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    © 2012 Foodies. All rights reserved.
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</div>
+
+{% block pre_js_includes_no_compress %}
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='{% static "vendor/jquery/js/jquery-1.8.3.min.js" %}' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+{% endblock %}
+
+{% compress js %}
+    {% block js_includes %}
+        <script type="text/javascript" src="{% static "components/json2/json2.js" %}"></script>
+        <script type="text/javascript" src="{% static "components/underscore/underscore-min.js" %}"></script>
+        <script type="text/javascript" src="{% static "components/backbone/backbone-min.js" %}"></script>
+        <script type="text/javascript" src="{% static "components/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+    {% endblock %}
+{% endcompress %}
+
+{% block pre_body %}
+{% endblock %}
+</body>
+</html>

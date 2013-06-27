@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="span1"></div>
+    <div class="span10">
+        {% block title_heading %}
+        {% if username %}
+        <h1>{{ username }}'s Recipes</h1>
+        {% else %}
+        <h1>All Recipes</h1>
+        {% endif %}
+        {% endblock %}
+        {% if recipe_list %}
+        <div class="accordion" id="accordion2">
+            {% for recipe in recipe_list %}
+            <div class="accordion-group">
+                <table width="100%">
+                    <tr>
+                        <td>
+                             <a class="accordion-toggle" data-toggle="collapse" data-parent="accordion2" href="#collapse{{ forloop.counter }}">
+                             <h3>{{ recipe.name }}</h3>
+                             </a>
+                        </td>
+                        <td align="right">
+                            <a href="{{ recipe.get_absolute_url }}">Goto Recipe</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="collapse{{ forloop.counter }}" class="accordion-body collapse">
+                <div class="accordion-inner">
+                    <table width="100%">
+                        <tr>
+                            <td>
+                                <dl>
+                                    <dt><h4>Ingredients</h4></dt>
+                                    <dd>
+                                        <ul>
+                                            {% for ingredient in recipe.ingredients.all %}
+                                            <li>{{ ingredient.quantity }} {{ ingredient.unit }} {{ ingredient.name }}</li>
+                                            {% endfor %}    
+                                        </ul>
+                                    </dd>
+                                    <dt><h4>Preparation Time</h4></dt>
+                                    <dd>
+                                        {{ recipe.time_to_prepare }} minutes.
+                                    </dd>
+                                    <dt><h4>Cooking Time</h4></dt>
+                                    <dd>
+                                        {{ recipe.cooking_time }} minutes.
+                                    </dd>
+                                    <dt><h4>Instructions</h4></dt>
+                                    <dd>
+                                        {{ recipe.prep_steps|linebreaks }}
+                                    </dd>
+                                   
+                                </dl>
+                            </td>
+                            <td align="right" width="300">
+                                <p>Recipe by: <a href="{% url user_recipes pk=recipe.user.id %}"> {{ recipe.user.get_full_name }} </a>
+                                <p><img src="http://placehold.it/300x200"/>
+                                <p>{{ recipe.name }}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        No recipes found.
+        {% endif %}
+    </div>
+    <div class="span1"></div>
+</div>
+{% endblock %}

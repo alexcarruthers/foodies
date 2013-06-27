@@ -1,0 +1,170 @@
+[
+    {
+        "pk": -1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "AnonymousUser", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2013-02-05T01:14:32.537Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "", 
+            "email": "", 
+            "date_joined": "2013-02-05T01:14:32.537Z"
+        }
+    }, 
+    {
+        "pk": 0, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "rami.sayar", 
+            "first_name": "Rami", 
+            "last_name": "Sayar", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2013-02-05T01:15:15.317Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$ohQoRYrY5RKq$l+OQzi8cffpnpD2G2CFZ224gjLjnXByqWQFbrgZU1uI=", 
+            "email": "rami.sayar@gmail.com", 
+            "date_joined": "2013-02-05T01:15:15.317Z"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "alex", 
+            "first_name": "Alex", 
+            "last_name": "Carruthers", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2013-02-05T13:44:16.410Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$J1FjekHgVPmG$grVYy6KLWk5TelTlc6QVeDJkvmhEU/lkkdGLhcIKIw4=", 
+            "email": "alex@alexcarruthers.com", 
+            "date_joined": "2013-02-05T13:44:16.410Z"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "jcohen", 
+            "first_name": "Jason", 
+            "last_name": "Cohen", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2013-02-05T17:33:02.047Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$NFnivNlDUxHr$dzJnkrmpaJ7UzRc5USM3z9U4afYWni7+T43Jh7T09Og=", 
+            "email": "jason.cohen@mail.mcgill.ca", 
+            "date_joined": "2013-02-05T17:33:02.047Z"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "shaun", 
+            "first_name": "Shaun", 
+            "last_name": "Hamelin-Owens", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2013-02-05T17:34:09.965Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$dXbPCzRF9hb8$Cg7wMkRowJbvC9tWRKO8qM4gN03c3EDy5wzV2nkMNtg=", 
+            "email": "shaunhaow@gmail.com", 
+            "date_joined": "2013-02-05T17:34:09.965Z"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "samsouma", 
+            "first_name": "Samantha", 
+            "last_name": "Rouphael", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2013-02-06T01:59:30.015Z", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "pbkdf2_sha256$10000$NMpVqXfUV4rE$9J0D8Tlcdk/TQiwrSSXUMb4OBIaM1/Cm3zWuu42IvTg=", 
+            "email": "samantha.rouphael@gmail.com", 
+            "date_joined": "2013-02-06T01:59:30.015Z"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.user",
+        "fields": {
+            "username": "joey",
+            "first_name": "Joey",
+            "last_name": "Addona",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2013-02-08T02:45:46.155Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$10000$52AOC7p597Ul$aIq0cIHXpGY+zgRM7qyMtj4DpJqFOZRLsMfkWwJHjmo=",
+            "email": "joseph.addona@gmail.com",
+            "date_joined": "2013-02-08T02:45:46.155Z"
+        }
+    },
+    {
+        "pk": 0,
+        "model": "account.userprofile",
+        "fields": {
+            "user": 0
+        }
+    },
+        {
+        "pk": 1,
+        "model": "account.userprofile",
+        "fields": {
+            "user": 1
+        }
+    },
+    {
+        "pk": 2,
+        "model": "account.userprofile",
+        "fields": {
+            "user": 2
+        }
+    },
+    {
+        "pk": 3,
+        "model": "account.userprofile",
+        "fields": {
+            "user": 3
+        }
+    },
+    {
+        "pk": 4,
+        "model": "account.userprofile",
+        "fields": {
+            "user": 4
+        }
+    },
+        {
+        "pk": 5,
+        "model": "account.userprofile",
+        "fields": {
+            "user": 5
+        }
+    }
+]

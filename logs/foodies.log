@@ -1,0 +1,1620 @@
+ERROR 2013-03-01 21:43:18,786 base 10142 139913240499968 Internal Server Error: /admin/blog/blogpost/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 366, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/decorators/cache.py", line 89, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/admin/sites.py", line 196, in inner
+    return view(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 25, in _wrapper
+    return bound_func(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 21, in bound_func
+    return func(self, *args2, **kwargs2)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/transaction.py", line 224, in inner
+    return func(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 955, in add_view
+    self.save_model(request, new_object, form, False)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/admin/options.py", line 709, in save_model
+    obj.save()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 463, in save
+    self.save_base(using=using, force_insert=force_insert, force_update=force_update)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 551, in save_base
+    result = manager._insert([self], fields=fields, return_id=update_pk, using=using, raw=raw)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 203, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 1593, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 912, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/debug_toolbar/utils/tracking/db.py", line 89, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/util.py", line 40, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: blog_blogpost
+ERROR 2013-03-01 21:46:41,929 base 11083 139637529102080 Internal Server Error: /post/1/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 55, in delete_post
+    return redirect('list_blogs')
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 75, in redirect
+    return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 476, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 396, in _reverse_with_prefix
+    "arguments '%s' not found." % (lookup_view_s, args, kwargs))
+NoReverseMatch: Reverse for 'list_blogs' with arguments '()' and keyword arguments '{}' not found.
+ERROR 2013-03-02 10:38:49,249 base 3876 139726686250752 Internal Server Error: /recipes/5/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 40, in view_recipe
+    return render_to_response('recipe/view_recipe.html',{'recipe':recipe}, context_instance=RequestContext(request))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/debug_toolbar/panels/template.py", line 37, in new_template_init
+    old_template_init(self, template_string, origin, name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 265, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 320, in invalid_block_tag
+    (command, get_text_list(["'%s'" % p for p in parse_until])))
+TemplateSyntaxError: Invalid block tag: 'static', expected 'endblock'
+ERROR 2013-03-02 10:39:06,095 base 3876 139726686250752 Internal Server Error: /recipes/5/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 40, in view_recipe
+    return render_to_response('recipe/view_recipe.html',{'recipe':recipe}, context_instance=RequestContext(request))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 176, in render_to_string
+    return t.render(context_instance)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/test/utils.py", line 62, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/test/utils.py", line 62, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/templatetags/compress.py", line 91, in render
+    rendered_output = compressor.output(self.mode, forced=forced)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/base.py", line 214, in output
+    verbatim_content, rendered_content = self.filtered_input(mode, forced)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/base.py", line 173, in filtered_input
+    for mode, hunk in self.hunks(mode, forced):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/base.py", line 131, in hunks
+    for kind, value, basename, elem in self.split_contents():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/js.py", line 22, in split_contents
+    filename = self.get_filename(basename)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/base.py", line 88, in get_filename
+    self.finders and " or with staticfiles." or "."))
+UncompressableFileError: 'components/raty/js/raty.min.js' could not be found in the COMPRESS_ROOT '/home/ramisayar/Development/foodies/static' or with staticfiles.
+ERROR 2013-03-02 10:59:50,157 base 3876 139726913812224 Internal Server Error: /recipes/5/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 40, in view_recipe
+    return render_to_response('recipe/view_recipe.html',{'recipe':recipe}, context_instance=RequestContext(request))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 176, in render_to_string
+    return t.render(context_instance)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 140, in render
+    return self._render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/test/utils.py", line 62, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 123, in render
+    return compiled_parent._render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/test/utils.py", line 62, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 823, in render
+    bit = self.render_node(node, context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/debug.py", line 74, in render_node
+    return node.render(context)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/templatetags/compress.py", line 91, in render
+    rendered_output = compressor.output(self.mode, forced=forced)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/base.py", line 214, in output
+    verbatim_content, rendered_content = self.filtered_input(mode, forced)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/base.py", line 173, in filtered_input
+    for mode, hunk in self.hunks(mode, forced):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/base.py", line 131, in hunks
+    for kind, value, basename, elem in self.split_contents():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/js.py", line 22, in split_contents
+    filename = self.get_filename(basename)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/compressor/base.py", line 88, in get_filename
+    self.finders and " or with staticfiles." or "."))
+UncompressableFileError: 'components/raty/js/jquery.raty.min.js' could not be found in the COMPRESS_ROOT '/home/ramisayar/Development/foodies/static' or with staticfiles.
+ERROR 2013-03-02 11:07:33,318 base 3876 139726913812224 Internal Server Error: /recipes/5/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 40, in view_recipe
+    return render_to_response('recipe/view_recipe.html',{'recipe':recipe}, context_instance=RequestContext(request))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/shortcuts/__init__.py", line 20, in render_to_response
+    return HttpResponse(loader.render_to_string(*args, **kwargs), **httpresponse_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 169, in render_to_string
+    t = get_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 134, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 42, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 48, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/debug_toolbar/panels/template.py", line 37, in new_template_init
+    old_template_init(self, template_string, origin, name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 125, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 153, in compile_string
+    return parser.parse()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 214, in do_extends
+    nodelist = parser.parse()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader_tags.py", line 189, in do_block
+    nodelist = parser.parse(('endblock',))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 267, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 1008, in generic_tag_compiler
+    defaults, takes_context, name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 981, in parse_bits
+    args.append(parser.compile_filter(bit))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 346, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/base.py", line 563, in __init__
+    "from '%s'" % (token[upto:], token))
+TemplateSyntaxError: Could not parse the remainder: '"components/raty/img' from '"components/raty/img'
+ERROR 2013-03-02 12:57:05,559 base 11785 140568021686016 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 12:58:57,464 base 11965 140313483978496 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 13:00:01,439 base 11965 140313464043264 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 32, in create_update_post
+    assign('blog.delete_post', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 14:29:50,884 base 14487 140276646807296 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:31:07,263 base 14597 140703751165696 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:31:24,966 base 14619 139841509594880 Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:31:25,021 base 14619 139841509594880 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:33:04,389 base 14719 139873970767616 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:34:54,472 base 14830 139800565053184 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:35:39,062 base 14847 140338837169920 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:36:31,509 base 14896 140313083815680 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:38:40,195 base 15037 140506179335936 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:40:04,304 base 15090 140011015505664 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:42:34,557 base 15124 139774991947520 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:45:18,398 base 15256 140058752366336 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:45:30,075 base 15269 139641413093120 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:46:09,089 base 15283 139806793828096 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:50:27,132 base 15393 139664554866432 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:51:25,278 base 15448 140503443986176 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:56:34,826 base 15598 139947367921408 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:58:02,286 base 15637 139916223194880 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 14:58:02,536 base 15637 139916223194880 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:58:39,585 base 15659 140436576036608 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 14:58:39,828 base 15659 140436576036608 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 14:59:50,774 base 15744 140580689065728 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:01:33,646 base 15819 139993726883584 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:02:00,762 base 15837 139793192064768 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:02:01,038 base 15837 139793192064768 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:02:30,867 base 15845 139666379929344 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:02:31,118 base 15845 139666379929344 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:11:42,299 base 16387 140534956181248 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:12:26,458 base 16434 140427633555200 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:12:26,714 base 16434 140427633555200 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:14:43,481 base 17594 139692879714048 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:14:43,965 base 17594 139692879714048 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:18:06,270 base 17652 140211572954880 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:19:16,677 base 17691 140674759907072 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:19:16,954 base 17691 140674759907072 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:21:29,505 base 17730 140018420971264 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:21:29,781 base 17730 140018420971264 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:23:02,089 base 17815 139864841852672 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:23:02,405 base 17815 139864841852672 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:23:29,650 base 17842 140143785588480 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('blog.view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:23:29,926 base 17842 140143785588480 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:25:03,774 base 17887 140199334770432 Internal Server Error: /post/add/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/contrib/auth/decorators.py", line 20, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/blog/views.py", line 30, in create_update_post
+    assign('view_blogpost', request.user, post)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/shortcuts.py", line 81, in assign
+    return UserObjectPermission.objects.assign(perm, user, obj)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/guardian/managers.py", line 19, in assign
+    content_type=ctype, codename=perm)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/manager.py", line 131, in get
+    return self.get_query_set().get(*args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 366, in get
+    % self.model._meta.object_name)
+DoesNotExist: Permission matching query does not exist.
+ERROR 2013-03-02 15:25:04,049 base 17887 140199334770432 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:25:59,318 base 17941 140313610868480 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:26:39,259 base 17960 140138423052032 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:27:08,486 base 17988 140403338667776 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:31:23,125 base 18195 140169101866752 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:34:12,021 base 18290 139792161298176 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:34:26,530 base 18313 140076570887936 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:35:25,204 base 18343 140285921490688 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:37:11,850 base 18405 139936066594560 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:37:38,350 base 18430 140429119215360 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:38:44,059 base 18488 140127795672832 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:39:30,374 base 18544 139698370414336 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:44:16,265 base 18638 140170613245696 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:45:08,180 base 18663 140476336740096 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-02 15:46:20,218 base 18713 139753404946176 Internal Server Error: /recipes/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 150, in get_response
+    response = callback(request, **param_dict)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/decorators.py", line 91, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/views/defaults.py", line 20, in page_not_found
+    t = loader.get_template(template_name) # You need to create a 404.html template.
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 145, in get_template
+    template, origin = find_template(template_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/template/loader.py", line 138, in find_template
+    raise TemplateDoesNotExist(name)
+TemplateDoesNotExist: 404.html
+ERROR 2013-03-03 22:32:08,806 base 12574 140123535243008 Internal Server Error: /recipes/create/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 22, in create_recipe
+    recipe.user = request.user
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/fields/related.py", line 366, in __set__
+    self.field.name, self.field.rel.to._meta.object_name))
+ValueError: Cannot assign "<django.utils.functional.SimpleLazyObject object at 0x7f71084746d0>": "Recipe.user" must be a "User" instance.
+ERROR 2013-03-03 23:11:27,260 base 19208 140242654197504 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:14:12,032 base 19317 140436973418240 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 67, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:15:52,969 base 19348 140167050086144 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:16:30,952 base 19365 140057421186816 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:19:34,394 base 19475 139990174414592 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:23:23,941 base 19608 140568975779584 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:24:22,278 base 19645 139890503112448 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:24:57,644 base 19675 140568607241984 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:32:50,105 base 20981 140405439289088 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:33:42,130 base 20994 140632157320960 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:34:15,735 base 21014 139878453298944 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 69, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:35:49,573 base 21052 139666652555008 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 71, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:36:30,031 base 21079 139847220754176 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 71, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:37:51,845 base 21113 140526331201280 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:38:30,453 base 21134 139849887983360 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:39:17,543 base 21174 139751657547520 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:40:34,550 base 21219 139684935137024 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-03 23:42:32,584 base 21311 139684611086080 Internal Server Error: /recipes/6/delete/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 68, in delete_recipe
+    recipe.delete()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/base.py", line 575, in delete
+    collector.collect([self])
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/deletion.py", line 175, in collect
+    if not sub_objs:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 130, in __nonzero__
+    iter(self).next()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 118, in _result_iter
+    self._fill_cache()
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 892, in _fill_cache
+    self._result_cache.append(self._iter.next())
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/query.py", line 291, in iterator
+    for row in compiler.results_iter():
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 763, in results_iter
+    for rows in self.execute_sql(MULTI):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 818, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/db/backends/sqlite3/base.py", line 344, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: recipe_contains
+ERROR 2013-03-15 23:04:46,853 base 9034 140209073157888 Internal Server Error: /recipes/list/0/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = callback(request, *callback_args, **callback_kwargs)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/views.py", line 28, in list_my_recipes_full
+    user_full_name = user_full_name.get_full_name()
+AttributeError: 'NoneType' object has no attribute 'get_full_name'
+ERROR 2013-03-15 23:05:16,351 base 9102 140464489494272 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 89, in get_response
+    response = middleware_method(request)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/middleware/common.py", line 67, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 531, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 420, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 298, in resolve
+    for pattern in self.url_patterns:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 328, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 323, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/ramisayar/Development/foodies/foodies/urls.py", line 23, in <module>
+    (r'^recipes/', include('foodies.recipe.urls')),
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 24, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/urls.py", line 6, in <module>
+    url(r'^all/$', list_my_recipes_full, name='list_recipes'),
+NameError: name 'list_my_recipes_full' is not defined
+ERROR 2013-03-15 23:05:19,723 base 9102 140464481101568 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 89, in get_response
+    response = middleware_method(request)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/middleware/common.py", line 67, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 531, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 420, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 298, in resolve
+    for pattern in self.url_patterns:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 328, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 323, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/ramisayar/Development/foodies/foodies/urls.py", line 23, in <module>
+    (r'^recipes/', include('foodies.recipe.urls')),
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 24, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/urls.py", line 6, in <module>
+    url(r'^all/$', list_my_recipes_full, name='list_recipes'),
+NameError: name 'list_my_recipes_full' is not defined
+ERROR 2013-03-15 23:05:20,826 base 9102 140464472708864 Internal Server Error: /recipes/all/
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 89, in get_response
+    response = middleware_method(request)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/debug_toolbar/middleware.py", line 80, in process_request
+    urlconf = import_module(getattr(request, 'urlconf', settings.ROOT_URLCONF))
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/ramisayar/Development/foodies/foodies/urls.py", line 23, in <module>
+    (r'^recipes/', include('foodies.recipe.urls')),
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 24, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/urls.py", line 6, in <module>
+    url(r'^all/$', list_my_recipes_full, name='list_recipes'),
+NameError: name 'list_my_recipes_full' is not defined
+ERROR 2013-03-15 23:05:21,082 base 9102 140464464316160 Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 89, in get_response
+    response = middleware_method(request)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/middleware/common.py", line 67, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 531, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 420, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 298, in resolve
+    for pattern in self.url_patterns:
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 328, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/core/urlresolvers.py", line 323, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/ramisayar/Development/foodies/foodies/urls.py", line 23, in <module>
+    (r'^recipes/', include('foodies.recipe.urls')),
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/conf/urls/__init__.py", line 24, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/home/ramisayar/.virtualenvs/foodies/local/lib/python2.7/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/home/ramisayar/Development/foodies/foodies/recipe/urls.py", line 6, in <module>
+    url(r'^all/$', list_my_recipes_full, name='list_recipes'),
+NameError: name 'list_my_recipes_full' is not defined

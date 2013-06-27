@@ -1,0 +1,432 @@
+[
+    {
+        "pk": 1, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "Flour", 
+            "unit": "c", 
+            "quantity": "1.75"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "salt", 
+            "unit": "tsp", 
+            "quantity": "0.5"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "baking soda", 
+            "unit": "tsp", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "butter, softened", 
+            "unit": "c", 
+            "quantity": "0.5"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "white sugar", 
+            "unit": "c", 
+            "quantity": "0.5"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "peanut butter", 
+            "unit": "c", 
+            "quantity": "0.5"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "packed brown sugar", 
+            "unit": "c", 
+            "quantity": "0.5"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "egg, beaten", 
+            "unit": " ", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "vanilla extract", 
+            "unit": "tsp", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "milk", 
+            "unit": "tbsp", 
+            "quantity": "2"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 1,
+            "name": "miniature chocolate covered peanut butter cups, unwrapped", 
+            "unit": " ", 
+            "quantity": "40"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "light olive oil", 
+            "unit": "c", 
+            "quantity": "0.25"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "white sugar", 
+            "unit": "c", 
+            "quantity": "0.75"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "vanilla extract", 
+            "unit": "tsp", 
+            "quantity": "2"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "almond extract", 
+            "unit": "tsp", 
+            "quantity": "0.5"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "eggs", 
+            "unit": " ", 
+            "quantity": "2"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "salt", 
+            "unit": "tsp", 
+            "quantity": "0.25"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "baking powder", 
+            "unit": "tsp", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "dried cranberries", 
+            "unit": "c", 
+            "quantity": "0.5"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 2,
+            "name": "pistachio nuts", 
+            "unit": "c", 
+            "quantity": "1.5"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 3,
+            "name": "sugar cube", 
+            "unit": " ", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 3,
+            "name": "Angostura bitters", 
+            "unit": " ", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 3,
+            "name": "chilled champagne", 
+            "unit": "oz", 
+            "quantity": "5.5"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 4,
+            "name": "Ground Beef", 
+            "unit": "lb", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 4,
+            "name": "onion, chopped", 
+            "unit": " ", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 4,
+            "name": "quartered cremini mushrooms or white mushrooms", 
+            "unit": "c", 
+            "quantity": "2"
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 4,
+            "name": "dried thyme", 
+            "unit": "tsp", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 4,
+            "name": "all-purpose flour", 
+            "unit": "tbsp", 
+            "quantity": "2"
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 4,
+            "name": "beef or vegetable stock", 
+            "unit": "c", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 5,
+            "name": "unsweetened chocolate, chopped", 
+            "unit": "oz", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 5,
+            "name": "eggs", 
+            "unit": " ", 
+            "quantity": "2"
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 5,
+            "name": "cream of tartar", 
+            "unit": "mL", 
+            "quantity": "1"
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 5,
+            "name": "granulated sugar", 
+            "unit": "c", 
+            "quantity": "0.25"
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "recipe.ingredient", 
+        "fields": {
+            "recipe": 5,
+            "name": "frozen raspberry cocktail concentrate", 
+            "unit": "tbsp", 
+            "quantity": "1"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "recipe.ingredient",
+        "fields": {
+            "recipe": 1,
+            "name": "Flour",
+            "unit": "c",
+            "quantity": "1.75"
+        }
+    },
+    {
+        "pk": 5, 
+        "model": "recipe.recipe", 
+        "fields": {
+            "name": "Chocolate Souffle for Two", 
+            "created": "2013-02-12T18:28:54.238Z", 
+            "image": "",
+            "modified": "2013-02-12T18:28:54.242Z", 
+            "cooking_time": 25, 
+            "user": 2, 
+            "time_to_prepare": 30, 
+            "prep_steps": "Fold 14-inch (35 cm) long piece of foil in half lengthwise; generously butter 3-inch (8 cm) wide border along 1 long edge. With buttered side above rim and facing inward, wrap strip around outside of 4- x 2-inch (350 mL) souffle dish; secure with string. Set aside.\r\n\r\nIn bowl over saucepan of hot (not boiling) water, melt chocolate with butter. In separate bowl, beat egg whites with cream of tartar until soft peaks form; beat in 3 tbsp (50 mL) of the sugar, 1 tbsp (15 mL) at a time, until stiff peaks form. In another bowl, beat egg yolks with remaining sugar for 5 minutes or until mixture falls in ribbons when beaters are lifted; beat in chocolate mixture and raspberry concentrate. Fold in one-quarter of the egg whites; gently fold in remaining whites. Scrape into prepared dish. (Can be prepared to this point and refrigerated for up to 4 hours.)\r\n\r\nPlace dish on baking sheet. Bake in lower third of 375 degree F (190 degree C) oven for 25 to 30 minutes or until puffed and almost firm to the touch. Remove string and foil. Serve immediately.\r\n", 
+            "rating_score": 0, 
+            "rating_votes": 0
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "recipe.recipe", 
+        "fields": {
+            "name": "Salisbury Steak with Mushroom Gravy", 
+            "created": "2013-02-12T18:24:42.001Z", 
+            "image": "",
+            "modified": "2013-02-12T18:24:42.005Z", 
+            "cooking_time": 30, 
+            "user": 5, 
+            "time_to_prepare": 15, 
+            "prep_steps": "1. In bowl, mix together beef, 2 tbsp (25 mL) water and 1/2 tsp (2 mL) each salt and pepper; shape into four 1/2-inch (1 cm) thick patties. (Make-ahead: Cover tightly and refrigerate for up to 6 hours.) In nonstick skillet, brown patties over medium-high heat. Transfer to plate; set aside.\r\n\r\n2. Drain any fat from pan. Add onion; cook over medium heat, stirring occasionally, until softened, about 3 minutes. Add mushrooms and thyme; cook, stirring occasionally, until mushrooms are golden, about 5 minutes.\r\n\r\n3. Sprinkle with flour; cook, stirring, for 1 minute. Stir in stock a little at a time, stirring constantly to prevent lumps; bring to boil. Reduce heat and simmer until slightly thickened, about 5 minutes.\r\n\r\n4. Return patties and any accumulated juices to pan; cover and simmer until no longer pink inside, about 15 minutes.\r\n", 
+            "rating_score": 0, 
+            "rating_votes": 0
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "recipe.recipe", 
+        "fields": {
+            "name": "Original Champagne Cocktail", 
+            "created": "2013-02-12T18:20:39.558Z", 
+            "image": "",
+            "modified": "2013-02-12T18:20:39.562Z", 
+            "cooking_time": 0, 
+            "user": 4, 
+            "time_to_prepare": 5, 
+            "prep_steps": "Place sugar cube in champagne glass; soak with bitters. Top with Champagne. Garnish with lemon.\r\n", 
+            "rating_score": 0, 
+            "rating_votes": 0
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "recipe.recipe", 
+        "fields": {
+            "name": "Cranberry Pistachio Biscotti", 
+            "created": "2013-02-11T05:12:21.150Z", 
+            "image": "",
+            "modified": "2013-02-11T05:12:21.170Z", 
+            "cooking_time": 55, 
+            "user": 2, 
+            "time_to_prepare": 15, 
+            "prep_steps": "1. Preheat the oven to 300 degrees F (150 degrees C).\r\n2. In a large bowl, mix together oil and sugar until well blended. Mix in the vanilla and almond extracts, then beat in the eggs. Combine flour, salt, and baking powder; gradually stir into egg mixture. Mix in cranberries and nuts by hand.\r\n3. Divide dough in half. Form two logs (12x2 inches) on a cookie sheet that has been lined with parchment paper. Dough may be sticky; wet hands with cool water to handle dough more easily.\r\n4. Bake for 35 minutes in the preheated oven, or until logs are light brown. Remove from oven, and set aside to cool for 10 minutes. Reduce oven heat to 275 degrees F (135 degrees C).\r\n5. Cut logs on diagonal into 3/4 inch thick slices. Lay on sides on parchment covered cookie sheet. Bake approximately 8 to 10 minutes, or until dry; cool.", 
+            "rating_score": 0, 
+            "rating_votes": 0
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "recipe.recipe", 
+        "fields": {
+            "name": "Peanut Butter Cup Cookies", 
+            "created": "2013-02-11T05:05:51.738Z", 
+            "image": "",
+            "modified": "2013-02-11T05:05:51.759Z", 
+            "cooking_time": 8, 
+            "user": 1, 
+            "time_to_prepare": 10, 
+            "prep_steps": "1. Preheat oven to 375 degrees F (190 degrees C). Sift together the flour, salt and baking soda; set aside.\r\n2. Cream together the butter, sugar, peanut butter and brown sugar until fluffy. Beat in the egg, vanilla and milk. Add the flour mixture; mix well. Shape into 40 balls and place each into an ungreased mini muffin pan.\r\n3. Bake at 375 degrees for about 8 minutes. Remove from oven and immediately press a mini peanut butter cup into each ball. Cool and carefully remove from pan.\r\n", 
+            "rating_score": 0, 
+            "rating_votes": 0
+        }
+    }
+]

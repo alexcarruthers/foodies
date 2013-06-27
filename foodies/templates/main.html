@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{%  block content %}
+    <div class="row">
+        <div class="span1"></div>
+        <div class="span10">
+            <div class="hero-unit">
+                <h1>Welcome to Foodies!</h1>
+                <p>Foodies is a community connecting you to the very best recipes and writings from both professional
+                and home chefs.</p>
+                <p>
+                    {% if not user.is_authenticated %}
+                        <a class="btn btn-primary btn-large" href="{% url account.views.register %}">
+                            Register!
+                        </a>
+                        <a class="btn btn-primary btn-large" href="{% url account.views.login %}">
+                            Login!
+                        </a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <div class="span1"></div>
+    </div>
+    <div class="row">
+        <div class="span1"></div>
+        <div class="span5">
+            <div class="page-header">
+                <h3>Newest Blog Posts</h3>
+            </div>
+            <ul>
+                {% for blog in blogs %}
+                    <li><a href="{% url blog.views.view_post pk=blog.pk %}">{{ blog.title }}</a></li>
+                {% empty %}
+                    <li>No blogs yet :(</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="span5">
+            <div class="page-header">
+                <h3>Newest Recipes</h3>
+            </div>
+            <ul>
+                {% for recipe in recipes %}
+                    <li><a href="{{ recipe.get_absolute_url }}">{{ recipe.name }}</a></li>
+                {% empty %}
+                    <li>No recipes yet :(</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="span1"></div>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="row">
+        <div class="span1"></div>
+        <div class="span5">
+            <div class="page-header">
+                <h3>My Blog Posts</h3>
+            </div>
+            <ul>
+                {% for blog in userblogs %}
+                    <li><a href="{% url blog.views.view_post pk=blog.pk %}">{{ blog.title }}</a></li>
+                {% empty %}
+                    <li>No blogs yet :(</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="span5">
+            <div class="page-header">
+                <h3>My Recipes</h3>
+            </div>
+            <ul>
+                {% for recipe in userrecipes %}
+                    <li><a href="{{ recipe.get_absolute_url }}">{{ recipe.name }}</a></li>
+                {% empty %}
+                    <li>No recipes yet :(</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="span1"></div>
+    </div>
+    {% endif %}
+{% endblock %}

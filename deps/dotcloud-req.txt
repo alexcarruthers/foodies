@@ -1,0 +1,5 @@
+# DotCloud Requirements
+dotcloud==0.4.8
+-e git://github.com/sayar/django-announcements.git#egg=announcements
+-e git://github.com/sayar/django-activity-stream.git#egg=django-analytical
+

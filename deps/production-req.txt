@@ -1,0 +1,6 @@
+# AWS Requirements
+MySQL-python==1.2.3
+
+deps/sayar-django-announcements-55252d9.zip
+deps/sayar-django-activity-stream-0.3.9-162-gdb9fd40.zip
+

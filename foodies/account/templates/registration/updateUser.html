@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load url from future %}
+
+{% block content %}
+    <div class="row">
+        <div class="span12">
+            <div class="page-header">
+                <h1>Update Profile
+                     <a href="#myModal" role="button" class="btn btn-primary pull-right" data-toggle="modal">Delete</a>
+                     <div id="myModal" class="modal hide fade">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h3>Delete User</h3>
+                        </div>
+                        <div class="modal-body">
+                            <h5>Are you sure you want to delete your user?</h5>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary" data-dismiss="modal">Cancel</a>
+			    <a href="{% url "delete_user" %}" class="btn btn-primary">Delete User</a>
+                        </div>
+                    </div>
+                </h1>
+            </div>
+            {% if form.errors %}
+                <p>Changes invalid, try again</p>
+            {% endif %}
+            <form action="{% url 'updateUser' %}" method="post" class="form-horizontal">
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                    <div class="alert alert-error">
+                        <p>{{ form.non_field_errors }}</p>
+                    </div>
+                {% endif %}
+                <fieldset>
+                    {% for field in form %}
+                        <div class="control-group {% if field.errors %}error{% endif %}">
+                            <label class="control-label" for="{{ field.auto_id }}">{{ field.label }}:</label>
+                            <div class="controls">
+                                {{ field }}
+                                {% if field.errors %}
+                                    {% for error in field.errors %}
+                                        <span class="help-inline">{{ error|escape }}</span>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="form-actions">
+                        <input type="submit" class="btn btn-primary" value="update" />
+                    </div>
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock %}
